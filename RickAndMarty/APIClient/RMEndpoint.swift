@@ -11,7 +11,7 @@ import Foundation
 @frozen enum RMEndpoint: String{
     
     //to get charater
-    case charater
+    case character
     
     //to getlocation
     case location
