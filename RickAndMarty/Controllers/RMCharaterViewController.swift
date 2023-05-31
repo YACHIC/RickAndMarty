@@ -14,7 +14,7 @@ final class RMCharaterViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         title = "角色"
-//URL test
+////URL test
 //        let request = RMRequest(
 //            endpoint: .character,
 //            queryParameters: [
@@ -26,8 +26,26 @@ final class RMCharaterViewController: UIViewController {
 //        print(request.url)
 //
 //        RMService.shared.execute(request, expecting: RMCharacter.self) { result in
-//            <#code#>
+//            switch result{
+//                case .success:
+//
+//                break
+//
+//                case .failure(let error):
+//                    print(String(describing: error))
+//                break
+//
+//            }
 //        }
+        
+        RMService.shared.execute(.listCharactersRequests, expecting: RMGetAllCharactersResponse.self) { result in
+            switch result {
+            case .success(let model):
+                print(String(describing: model))
+            case .failure(let error):
+                print(String(describing: error))
+            }
+        }
 
     }
     
