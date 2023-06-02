@@ -8,9 +8,9 @@
 import UIKit
 
 /// 角色列表畫面
-final class CharacterListView: UIView {
+final class RMCharacterListView: UIView {
 
-    private let viewModel = CharacterListViewViewModel()
+    private let viewModel = RMCharacterListViewViewModel()
     
     //loading sign
     private let spinner: UIActivityIndicatorView = {
@@ -29,10 +29,12 @@ final class CharacterListView: UIView {
         collectionView.isHidden = true
         collectionView.alpha = 0
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(UICollectionViewCell.self , forCellWithReuseIdentifier: "cell")
+        collectionView.register(RMCharacterCollectionViewCell.self , forCellWithReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier)
         return collectionView
     }()
     
+    
+    // MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
